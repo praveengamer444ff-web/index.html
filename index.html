@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secret Page 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9ecf, #ffcce6);
+    overflow-x: hidden;
+}
+
+/* Doodle background */
+body::before {
+    content: "💖 ✨ 🌸 🐻 💕 ⭐ 💫 🦋 💗";
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+/* Sections */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Alien */
+.alien {
+    font-size: 60px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Board text */
+.board {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Title */
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: white;
+    text-shadow: 0 0 10px hotpink;
+    margin-bottom: 20px;
+}
+
+/* Input */
+input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background: hotpink;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px pink;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Hidden section */
+#page2 {
+    opacity: 0;
+    transition: 1s;
+}
+
+/* Funny text */
+.fun-text {
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 0 8px purple;
+    text-align: center;
+}
+
+/* Monkey image */
+.monkey {
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="section" id="page1">
+
+    <div class="alien">👽</div>
+    <div class="board">Welcome to this page 💖</div>
+
+    <div class="title">Enter Your Secret Code 🔐</div>
+
+    <input type="password" id="code" placeholder="Enter code">
+    <button onclick="checkCode()">OK</button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="section" id="page2">
+
+    <div class="alien">👽</div>
+    <div class="board">You are correct my friend 😎</div>
+
+    <div class="fun-text">
+        Naa solla vara vishayam enna na... 😏<br><br>
+        Nee oru korangu 🐒😂
+    </div>
+
+    <img class="monkey" src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Monkey_smiling.jpg">
+
+</div>
+
+<script>
+
+function checkCode() {
+    let code = document.getElementById("code").value;
+
+    if(code === "prakshi43") {
+
+        // scroll to next page
+        document.getElementById("page2").style.opacity = "1";
+        document.getElementById("page2").scrollIntoView({behavior: "smooth"});
+
+    } else {
+        alert("Wrong code 😜 Try again!");
+    }
+}
+
+</script>
+
+</body>
+</html>
